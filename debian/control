@@ -16,7 +16,7 @@ Description:System UI
 Package: osso-systemui-dev
 Section: devel
 Architecture: any
-Depends:  libdbus-1-dev, libgtk2.0-dev
+Depends:  libdbus-1-dev, libgtk2.0-dev | libgtk-3-dev
 Description: Header files for System UI
 
 Package: osso-systemui-dbg
