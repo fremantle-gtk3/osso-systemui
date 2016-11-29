@@ -8,6 +8,7 @@ AM_CONFIG_HEADER(config.h)
 AC_CONFIG_FILES([
 	Makefile
 	src/Makefile
+	osso-systemui.pc
 ])
 
 AC_ISC_POSIX
@@ -17,9 +18,12 @@ AC_HEADER_STDC
 AC_DISABLE_STATIC
 AC_PROG_LIBTOOL
 
+osso_systemui_pc_gtk=gtk+-2.0
 PKG_CHECK_MODULES([HILDON], [hildon-1],
     [AC_DEFINE(WITH_HILDON,[1],[Use Hildon])],
-    [PKG_CHECK_MODULES(HILDON, gtk+-3.0, [AC_DEFINE(WITH_GTK3,[1],[Use Gtk3])])])
+    [PKG_CHECK_MODULES(HILDON, gtk+-3.0, [AC_DEFINE(WITH_GTK3,[1],[Use Gtk3])
+                                         osso_systemui_pc_gtk=gtk+-3.0])])
+AC_SUBST(osso_systemui_pc_gtk)
 
 PKG_CHECK_MODULES(OSSO, libosso)
 PKG_CHECK_MODULES(GCONF, gconf-2.0)

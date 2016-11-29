@@ -5,7 +5,7 @@ includedir=${prefix}/include/systemui
 
 Name: osso-systemui
 Description: Header files for osso-systemui
-Requires: dbus-1 glib-2.0 gtk+-2.0 
+Requires: dbus-1 glib-2.0 @osso_systemui_pc_gtk@
 Version: 0.2
 Libs:
 Cflags: -I${includedir}
